@@ -5,7 +5,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var filmsRouter = require('./routes/films');
+var pizzaRouter = require('./routes/pizzas');
 var app = express();
 
 app.use(logger('dev'));
@@ -15,6 +15,10 @@ app.use(cookieParser());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/films', filmsRouter);
+app.use('/pizzas', pizzaRouter);
+app.use('/', function(req,res,next) {
+    console.log()
+});
+
 
 module.exports = app;
